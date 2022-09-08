@@ -8,19 +8,21 @@ if (!isset($_SESSION['loggedin'])) {
 <body>
   <!-- Add service form  -->
 	<form method="post" class="serviceform">
-<!--		<input type="text" name="servicename" placeholder="Service name">-->
-        <select name="commonservice">
-            <option value="netflix">Netflix</option>
-            <option value="videoland">Videoland</option>
-            <option value="disneyplus">Disney+</option>
-            <option value="prime">Prime</option>
-            <option value="phone">Phone subscription</option>
-            <option value="internet">Internet subscription</option>
-            <option value="other">Other</option>
-        </select><br>
-        <input type="text" name="costs" placeholder="Price per month" required><br>
-            <input type="text" name="payday" placeholder="Pay day (1 - 31)" required><br>
-            <input type="submit" name="addservice" placeholder="Add service">
+            <div class="serviceheader"></div>
+                <h2>Add service</h2>
+            <select name="commonservice" class="addservice">
+                <option value="netflix">Netflix</option>
+                <option value="videoland">Videoland</option>
+                <option value="disneyplus">Disney+</option>
+                <option value="prime">Prime</option>
+                <option value="phone">Phone subscription</option>
+                <option value="internet">Internet subscription</option>
+                <option value="other">Other</option>
+            </select>
+            <br>
+            <input type="text" name="costs" class="addservice" placeholder="Price per month" required><br>
+            <input type="text" name="payday" class="addservice" placeholder="Pay day (1 - 31)" required><br>
+            <input type="submit" name="addservice" class="btn btn-success margin" placeholder="Add service">
 	</form>
 </body>
 <?php
