@@ -10,10 +10,13 @@ if (!isset($_SESSION['loggedin'])) {
 	<form method="post" class="serviceform">
 		<input type="text" name="servicenaam" placeholder="Service name" required>
     <select name="commonservice">
-      <option value="netflix">Netflix</option>
-      <option value="netflix">Netflix</option>
-      <option value="netflix">Netflix</option>
-      <option value="netflix">Netflix</option>
+        <option value="netflix">Netflix</option>
+        <option value="videoland">Videoland</option>
+        <option value="disneyplus">Disney+</option>
+        <option value="prime">Prime</option>
+        <option value="phone">Phone subscription</option>
+        <option value="internet">Internet subscription</option>
+        <option value="other">Other</option>
     </select><br>
     <input type="text" name="kosten" placeholder="Price per month" required><br>
 		<input type="text" name="betaaldag" placeholder="Pay day (1 - 31)" required><br>
