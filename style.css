@@ -1,0 +1,84 @@
+.loginback {
+	background-color: white;
+}
+
+.loginform {
+	margin: auto;
+	text-align: center;
+	margin-top: 10%;
+	background-color: white;
+	width: 25%;
+	padding: 25px;
+	border-radius: 5px;
+}
+
+.loginbutton {
+	
+}
+
+.navbar {
+	background-color: #0090e3;
+	text-decoration: none;
+	margin-bottom: 15px;
+	height: 3vw;
+}
+
+a {
+	text-decoration: none!important;
+}
+
+.navlink {
+	text-align: center!important;
+	margin: auto;
+	color: white;
+}
+
+
+
+.serviceform {
+	width: 25%;
+	margin: auto;
+	background-color: grey;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-radius: 5px;
+}
+
+
+.infocontainer {
+	margin: auto;
+	width: 50%;
+	text-align: center;
+	background-color: #0090e3;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-radius: 5px;	
+	color: white;
+}
+
+.profileinput {
+	margin-top: -10px;
+	height: 3vw;
+	border: 1px solid white;
+	width: 80%;
+}
+
+input:focus {
+	outline: none;
+}
+
+.savebtn {
+	width: 13vw;
+	margin-top: 10px;
+	background-color: #2eb82e;
+	color: white;
+	border: 1px solid #2eb82e;
+	border-radius: 5px;
+	height: 2.5vw;
+}
+
+.savebtn:hover {
+	background-color: #29a329;
+	border: 1px solid #29a329;
+}
