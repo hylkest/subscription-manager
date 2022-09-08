@@ -49,7 +49,9 @@ if (isset($_POST['addservice'])) {
 VALUES ('$commonservice', '$costs', '$payday', '$uid')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        echo "<div class='alert alert-success' role='alert'>
+  This service is successfully added to your profile!
+</div>";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
