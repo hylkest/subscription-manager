@@ -82,3 +82,20 @@ input:focus {
 	background-color: #29a329;
 	border: 1px solid #29a329;
 }
+
+.addservice {
+	width: 85%;
+	margin: auto;
+}
+
+.margin {
+	margin-top: 10px;
+}
+
+/*.serviceheader {*/
+/*	background-color: white;*/
+/*	border: 1px solid black;*/
+/*	font-size: 25px;*/
+/*	margin-top: 10px;*/
+/*	height: 100px;*/
+/*}*/
