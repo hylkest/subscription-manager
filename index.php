@@ -8,7 +8,7 @@ if (!isset($_SESSION['loggedin'])) {
 <body>
   <!-- Add service form  -->
 	<form method="post" class="serviceform">
-		<input type="text" name="servicenaam" placeholder="Service name" required>
+<!--		<input type="text" name="servicename" placeholder="Service name">-->
         <select name="commonservice">
             <option value="netflix">Netflix</option>
             <option value="videoland">Videoland</option>
@@ -28,6 +28,29 @@ if (!isset($_SESSION['loggedin'])) {
 
 #When form is submitted
 
-if (isset($_POST['servicetoeboegen'])) {
 
+
+if (isset($_POST['addservice'])) {
+    #VARS
+    $commonservice = $_POST['commonservice'];
+    $costs = $_POST['costs'];
+    $payday = $_POST['payday'];
+    $uid = $_SESSION['user_id'];
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "INSERT INTO services (service_name, price, paydate, user_id)
+VALUES ('$commonservice', '$costs', '$payday', '$uid')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
 }
