@@ -9,18 +9,25 @@ if (!isset($_SESSION['loggedin'])) {
   <!-- Add service form  -->
 	<form method="post" class="serviceform">
 		<input type="text" name="servicenaam" placeholder="Service name" required>
-    <select name="commonservice">
-        <option value="netflix">Netflix</option>
-        <option value="videoland">Videoland</option>
-        <option value="disneyplus">Disney+</option>
-        <option value="prime">Prime</option>
-        <option value="phone">Phone subscription</option>
-        <option value="internet">Internet subscription</option>
-        <option value="other">Other</option>
-    </select><br>
-    <input type="text" name="kosten" placeholder="Price per month" required><br>
-		<input type="text" name="betaaldag" placeholder="Pay day (1 - 31)" required><br>
-		<input type="submit" name="servicetoevoegen" placeholder="Toevoegen">
+        <select name="commonservice">
+            <option value="netflix">Netflix</option>
+            <option value="videoland">Videoland</option>
+            <option value="disneyplus">Disney+</option>
+            <option value="prime">Prime</option>
+            <option value="phone">Phone subscription</option>
+            <option value="internet">Internet subscription</option>
+            <option value="other">Other</option>
+        </select><br>
+        <input type="text" name="costs" placeholder="Price per month" required><br>
+            <input type="text" name="payday" placeholder="Pay day (1 - 31)" required><br>
+            <input type="submit" name="addservice" placeholder="Add service">
 	</form>
 </body>
 <?php
+
+
+#When form is submitted
+
+if (isset($_POST['servicetoeboegen'])) {
+
+}
