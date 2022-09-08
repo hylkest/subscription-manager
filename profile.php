@@ -51,5 +51,9 @@ if ($result->num_rows > 0) {
 <?php
   }
 }
+
+//@todo Make it so changes will be saved to database
 $conn->close();
 ?>
+
+
