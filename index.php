@@ -47,10 +47,10 @@ if (isset($_POST['addservice'])) {
 
     $sql = "INSERT INTO services (service_name, price, paydate, user_id)
 VALUES ('$commonservice', '$costs', '$payday', '$uid')";
-
+    $alertservice = ucfirst($commonservice);
     if ($conn->query($sql) === TRUE) {
-        echo "<div class='alert alert-success' role='alert'>
-  This service is successfully added to your profile!
+        echo "<div class='alert alert-success alertwidth' role='alert'>
+  Service <b>$alertservice </b> is successfully added to your profile!
 </div>";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
