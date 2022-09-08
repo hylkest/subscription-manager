@@ -51,10 +51,10 @@ if (isset($_POST['loginsubmit'])) {
  
 	    			header("Location: index.php");
 	    		} else {
-	    			echo "klopt niet";
+	    			echo "Credentials are wrong";
 	    		}
 	  		} else {
-	  			echo "klopt niet";
+	  			echo "Credentials are wrong";
 	  		}
 		}
 	}
