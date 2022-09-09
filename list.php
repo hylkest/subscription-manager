@@ -24,9 +24,38 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "<b>Service name:</b> ".$row['service_name']."<br>
-    <b>Price (monthly):</b> ".$row['price']."<br>
-    <b>Pay day:</b> ".$row['paydate']."<br><br>";
+?>
+<html>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Servicename</th>
+        <th scope="col">Price</th>
+        <th scope="col">Payday</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td><?php echo $row['service_name']; ?></td>
+    </tr>
+    <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+    </tr>
+    <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+    </tr>
+    </tbody>
+</table>
+</html>
+
+<?php
   }
 } else {
   echo "0 results";
