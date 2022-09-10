@@ -3,6 +3,25 @@ require_once 'header.php';
 if (!isset($_SESSION['loggedin'])) {
   header("Location: login.php");
 }
+?>
+
+<html>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col"></th>
+        <th scope="col">Servicename</th>
+        <th scope="col">Price</th>
+        <th scope="col">Payday</th>
+        <th scope="col">Date added</th>
+    </tr>
+    </thead>
+    <tbody>
+
+</html>
+
+<?php
 
 $servername = "localhost";
 $username = "root";
@@ -24,35 +43,16 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
+      $servicename = ucfirst($row['service_name'])
 ?>
 <html>
-<table class="table">
-    <thead>
     <tr>
-        <th scope="col">#</th>
-        <th scope="col">Servicename</th>
-        <th scope="col">Price</th>
-        <th scope="col">Payday</th>
+        <th scope="row"></th>
+        <td><?php echo $servicename; ?></td>
+        <td><?php echo $row['price']; ?></td>
+        <td><?php echo $row['paydate']; ?></td>
+        <td><?php echo $row['date_added']; ?></td>
     </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <th scope="row">1</th>
-        <td><?php echo $row['service_name']; ?></td>
-    </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-    </tr>
-    </tbody>
-</table>
 </html>
 
 <?php
@@ -62,3 +62,8 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
+
+<html>
+</tbody>
+</table>
+</html>
