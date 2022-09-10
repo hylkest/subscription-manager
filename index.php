@@ -10,7 +10,7 @@ if (!isset($_SESSION['loggedin'])) {
 	<form method="post" class="serviceform">
             <div class="serviceheader"></div>
                 <h2>Add service</h2>
-            <select name="commonservice" class="addservice">
+            <select name="commonservice" class="addservice form-control">
                 <option value="netflix">Netflix</option>
                 <option value="videoland">Videoland</option>
                 <option value="disneyplus">Disney+</option>
@@ -20,8 +20,10 @@ if (!isset($_SESSION['loggedin'])) {
                 <option value="other">Other</option>
             </select>
             <br>
-            <input type="text" name="costs" class="addservice" placeholder="Price per month" required><br>
-            <input type="text" name="payday" class="addservice" placeholder="Pay day (1 - 31)" required><br>
+            <input type="text" name="costs" class="addservice form-control" placeholder="Price per month" required><br>
+            <input type="text" name="payday" class="addservice form-control" placeholder="Pay day (1 - 31)" required><br>
+            <input type="text" name="username" class="addservice form-control" placeholder="Username used"><br>
+            <input type="text" name="email" class="addservice form-control" placeholder="Email used">
             <input type="submit" name="addservice" class="btn btn-success margin" placeholder="Add service">
 	</form>
 </body>
