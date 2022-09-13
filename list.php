@@ -52,6 +52,7 @@ if ($result->num_rows > 0) {
         <td><?php echo $row['price']; ?></td>
         <td><?php echo $row['paydate']; ?></td>
         <td><?php echo $row['date_added']; ?></td>
+        <td><form method="post"><input type="submit" name="removeservice" class="btn btn-danger" value="Remove"></form></td>
     </tr>
 </html>
 
