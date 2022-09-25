@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
 require_once 'header.php';
 if (!isset($_SESSION['loggedin'])) {
   header("Location: login.php");
@@ -78,24 +79,49 @@ if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
       $servicename = ucfirst($row['service_name'])
+
 ?>
-<html>
     <tr>
         <th scope="row"></th>
         <td><?php echo $servicename; ?></td>
         <td><?php echo $row['price']; ?></td>
         <td><?php echo $row['paydate']; ?></td>
         <td><?php echo $row['date_added']; ?></td>
-        <td><form method="post"><input type="submit" name="removeservice" class="btn btn-danger" value="Remove"></form></td>
+        <form method="post">
+        <td><input name="selectremove" type="checkbox" value="<?php echo $row['id']; ?>"></td>
+            <td><input type="submit" name="confirmdelete" value="Delete"></td>
+        </form>
     </tr>
 </html>
 
 <?php
   }
 } else {
-  echo "0 results";
+  echo "<div class='alert alert-warning alertwidth' role='alert'>
+  You have no active subscriptions
+</div>";
 }
 $conn->close();
+$selectremove = $_POST['selectremove'];
+
+if (isset($_POST['confirmdelete'])) {
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql2 = "DELETE FROM services WHERE id='$selectremove'";
+
+    if ($conn->query($sql2) === TRUE) {
+        echo "Record deleted successfully";
+    } else {
+        echo "Error deleting record: " . $conn->error;
+    }
+
+    $conn->close();
+    header('Location: list.php');
+}
+
 ?>
 
 <html>
