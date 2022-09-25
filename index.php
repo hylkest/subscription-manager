@@ -17,8 +17,13 @@ if (!isset($_SESSION['loggedin'])) {
                 <option value="videoland">Videoland</option>
                 <option value="disneyplus">Disney+</option>
                 <option value="prime">Prime</option>
+                <option value="hbo">HBO Max</option>
+                <option value="npo">NPO</option>
                 <option value="phone">Phone subscription</option>
                 <option value="internet">Internet subscription</option>
+                <option value="insurance">Insurance</option>
+                <option value="rent">Rent</option>
+
                 <option value="other">Other</option>
             </select>
             <br>
