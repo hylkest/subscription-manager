@@ -1,14 +1,28 @@
 <?php
-error_reporting(E_ALL ^ E_NOTICE);
+//error_reporting(E_ALL ^ E_NOTICE);
 require_once 'header.php';
 if (!isset($_SESSION['loggedin'])) {
   header("Location: login.php");
 }
 
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-$dataPoints = array(
-    array("label"=> "Netflix", "y"=> 41),
-);
+$sql = "SELECT * FROM services";
+$result = $conn->query($sql);
+$dataPoints = array();
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        echo $row['id'];
+        echo $row['service_name'];
+        $new = array_push($dataPoints, array("label"=> "Netflix", "y"=> 1234));
+    }
+}
+$conn->close();
+
+//$dataPoints = array(
+//    array("label"=> "Netflix", "y"=> 1234),
+//    array("label"=> "Netflix", "y"=> 12),
+//);
 ?>
 
 <html>
@@ -89,7 +103,7 @@ if ($result->num_rows > 0) {
         <td><?php echo $row['date_added']; ?></td>
         <form method="post">
         <td><input name="selectremove" type="checkbox" value="<?php echo $row['id']; ?>"></td>
-            <td><input type="submit" name="confirmdelete" value="Delete"></td>
+            <td><input type="submit" class="btn btn-danger" name="confirmdelete" value="Delete"></td>
         </form>
     </tr>
 </html>
